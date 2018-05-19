@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   libft1.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/16 07:08:24 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/18 06:42:14 by egenis           ###   ########.fr       */
+/*   Created: 2018/05/19 12:28:41 by egenis            #+#    #+#             */
+/*   Updated: 2018/05/19 12:28:52 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,18 @@
 #	include <string.h>
 
 void	ft_putchar(char c);
+void	ft_bzero(void *s, size_t n);
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+void	*ft_memmove(void *dst, const void *src, size_t len);
+void	*ft_memset(void *b, int c, size_t len);
 
-int		ft_strlen(char *str);
+char	*ft_strcat(char *s1, const char *s2);
+char	*ft_strncat(char *s1, const char *s2, size_t n);
+
+size_t	ft_strlen(const char *s);
+
+int	ft_memcmp(const void *s1, const void *s2, size_t n);
 
 #endif

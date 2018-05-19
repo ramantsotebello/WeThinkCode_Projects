@@ -1,21 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/15 08:20:09 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/19 11:54:48 by egenis           ###   ########.fr       */
+/*   Created: 2018/05/19 11:10:51 by egenis            #+#    #+#             */
+/*   Updated: 2018/05/19 11:35:02 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t ft_strlen(const char *s)
-{
-	size_t count;
+#include <stdio.h>
+#include "libft.h"
 
-	count = 0;
-	while (str[count])
-		++count;
-	return (count);
+char *ft_strcpy(char *dst, const char *src)
+{
+	size_t strlen;
+	unsigned long cntr;
+
+	strlen = ft_strlen(src);
+	cntr = 0;
+	while (cntr < strlen)
+	{
+		dst[cntr] = src[cntr];
+		++cntr;
+	}
+	dst[cntr] = '\0';
+	return (dst);
+}
+
+int main(void)
+{
+	char ar1[] = "Hello Bro!";
+	char ar2[] = "sdfhgsdhfg";
+	printf("%s\n", ft_strcpy(ar1, ar2));
+	return (0);
 }
