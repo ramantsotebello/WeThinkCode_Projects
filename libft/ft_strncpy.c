@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/18 15:06:29 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/19 13:27:13 by egenis           ###   ########.fr       */
+/*   Created: 2018/05/19 13:58:21 by egenis            #+#    #+#             */
+/*   Updated: 2018/05/19 14:27:25 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+char *ft_strncpy(char *dst, const char *src, size_t len)
 {
+	size_t strlen;
 	size_t cntr;
 
+	strlen = ft_strlen(src);
 	cntr = 0;
-	while (cntr < n)
+	while (cntr < len)
 	{
-		((unsigned char *)s)[cntr] = 0;
-		++cntr;
+		if (src[cntr])
+			dst[cntr] = src[cntr];
+		else
+			dst[cntr] = '\0';
+		cntr++;
 	}
+	return (dst);
 }

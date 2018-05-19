@@ -6,21 +6,21 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/18 14:14:21 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/18 14:28:13 by egenis           ###   ########.fr       */
+/*   Updated: 2018/05/19 13:44:49 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char *ft_strncat(char *s1, const char *s2, size_t n)
 {
-	int nul_pos;
+	size_t nul_pos;
 	int s2_cntr;
 	size_t num_count;
 
-	nul_pos = 0;
+	nul_pos = ft_strlen(s1);
 	s2_cntr = 0;
 	num_count = 0;
-	while (s1[nul_pos])
-		++nul_pos;
 	while (s2[s2_cntr] && num_count < n)
 	{
 		s1[nul_pos] = s2[s2_cntr];
