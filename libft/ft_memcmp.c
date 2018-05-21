@@ -6,14 +6,15 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/18 17:36:15 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/19 13:28:36 by egenis           ###   ########.fr       */
+/*   Updated: 2018/05/21 12:11:25 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /* Might need to lower protection as the manual says that both strings are
- * assumed to be (n) long. */
+** assumed to be (n) long.
+*/
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t cntr;

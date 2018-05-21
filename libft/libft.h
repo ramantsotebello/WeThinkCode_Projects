@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/19 13:25:25 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/19 13:26:18 by egenis           ###   ########.fr       */
+/*   Created: 2018/05/21 09:27:47 by egenis            #+#    #+#             */
+/*   Updated: 2018/05/21 09:27:50 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void	*ft_memset(void *b, int c, size_t len);
 char	*ft_strcat(char *s1, const char *s2);
 char	*ft_strncat(char *s1, const char *s2, size_t n);
 
-size_t	ft_strlen(const char *s);
-
 int	ft_memcmp(const void *s1, const void *s2, size_t n);
+
+size_t	ft_strlen(const char *s);
 
 #endif

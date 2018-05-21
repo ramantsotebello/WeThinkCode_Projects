@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/19 11:10:51 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/21 09:25:54 by egenis           ###   ########.fr       */
+/*   Created: 2018/05/21 10:03:10 by egenis            #+#    #+#             */
+/*   Updated: 2018/05/21 12:09:10 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-char *ft_strcpy(char *dst, const char *src)
+char *ft_strchr(const char *s, int c)
 {
-	size_t strlen;
 	int cntr;
 
-	strlen = ft_strlen(src);
 	cntr = 0;
-	while (cntr < strlen)
-	{
-		dst[cntr] = src[cntr];
+	while (s[cntr] != (char)c && s[cntr])
 		++cntr;
-	}
-	dst[cntr] = '\0';
-	return (dst);
+	return (s[cntr] == (char)c ? (char *)(&(s[cntr])) : NULL);
+}
+
+int main(void)
+{
+	char ar[] = "Hello There!";
+	printf("The char found is %s\n", (ft_strchr(ar, '\0')));
+	printf("The char found is %s\n", (strchr(ar, '\0')));
+	return (0);
 }
