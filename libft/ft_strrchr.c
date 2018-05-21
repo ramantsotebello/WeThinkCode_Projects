@@ -6,7 +6,7 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 12:12:30 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/21 13:06:22 by egenis           ###   ########.fr       */
+/*   Updated: 2018/05/21 13:58:51 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char *ft_strrchr(const char *s, int c)
 int main(void)
 {
 	char ar[] = "Hello There Fellow";
-	printf("The char found is %s\n", ft_strrchr(ar, 'e'));
-	printf("The char found is %s\n", strrchr(ar, 'e'));
+	printf("The char pointer found is %p\n", ft_strrchr(ar, 'e'));
+	printf("The char pointer found is %p\n", strrchr(ar, 'e'));
 	return (0);
 }
