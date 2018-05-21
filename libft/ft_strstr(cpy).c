@@ -23,7 +23,7 @@ size_t ft_strlen(const char *s)
 	return (count);
 }
 
-char *ft_strstr(const char *haystack, const char *needle)
+char *ft_strstr1(const char *haystack, const char *needle)
 {
 	size_t cntr_hay;
 	size_t cntr_ndl;
@@ -36,12 +36,13 @@ char *ft_strstr(const char *haystack, const char *needle)
 	if (!(*needle))
 		return ((char*)haystack);
 	cntr_ndl = 0;
-	while (cntr_ndl < ndl_len && haystack[cntr_hay])
+	while (cntr_ndl < ndl_len)
 	{
 		cntr_ndl = 0;
 		cntr_hay_cpy = cntr_hay;
 		ndl_ptr = &(((char *)haystack)[cntr_hay]);
-		while (needle[cntr_ndl] == haystack[cntr_hay_cpy] && needle[cntr_ndl])
+		while (needle[cntr_ndl] == haystack[cntr_hay_cpy] && 
+				needle[cntr_ndl])
 		{
 			++cntr_ndl;
 			++cntr_hay_cpy;
@@ -51,10 +52,34 @@ char *ft_strstr(const char *haystack, const char *needle)
 	return (haystack[cntr_hay] == '\0' ? NULL : ndl_ptr);
 }
 
+char *ft_strstr(const char *haystack, const char *needle)
+{
+	int i;
+	int j;
+	size_t ndl_len;
+
+	i = 0;
+	j = 0;
+	match_count = 0;
+	ndl_len = ft_strlen(needle);
+	if (!(*needle))
+		return ((char *)haystack);
+	while (haystack[i] != needle[0])
+		++i;
+	if (!(haystack[i]))
+		return (NULL);
+	while (needle[j] == haystack[i] && needle[j])
+	{
+		++i;
+		++j;
+	}
+	return (j
+}
+
 int main(void)
 {
 	char ar1[] = "Hello There Fellow";
-	printf("%s\n", strstr(ar1, "duh"));
-	printf("%s\n", ft_strstr(ar1, "duh"));
+	printf("%s\n", strstr(ar1, "ere"));
+	printf("%s\n", ft_strstr1(ar1, "ere"));
 	return (0);
 }
