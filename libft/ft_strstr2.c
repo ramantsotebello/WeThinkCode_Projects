@@ -6,7 +6,7 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 14:02:45 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/21 17:32:59 by egenis           ###   ########.fr       */
+/*   Updated: 2018/05/22 08:29:52 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,28 @@ size_t ft_strlen(const char *s)
 	while (s[count])
 		++count;
 	return (count);
+}
+
+char *ft_strstr2(const char *haystack, const char *needle)
+{
+	size_t cntr_hay;
+	size_t cntr_ndl;
+	size_t ndl_len;
+	char *ndl_ptr;
+
+	cntr_hay = 0;
+	ndl_len = ft_strlen(needle);
+	while (haystack[cntr_hay])
+	{
+		cntr_ndl = 0;
+		ndl_ptr = &((char *)haystack)[cntr_hay];
+		while (cntr_ndl < ndl_len)
+		{
+
+			++cntr_ndl;
+		}
+		++cntr_hay;
+	}
 }
 
 char *ft_strstr(const char *haystack, const char *needle)
