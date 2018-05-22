@@ -8,8 +8,8 @@
 // value.
 int ft_strcmp(const char *s1, const char *s2)
 {
-	int cntr_s1;
-	int cntr_s2;
+	size_t cntr_s1;
+	size_t cntr_s2;
 
 	cntr_s1 = 0;
 	cntr_s2 = 0;
