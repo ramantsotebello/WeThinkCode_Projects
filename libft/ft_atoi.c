@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/23 06:53:58 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/23 07:13:23 by egenis           ###   ########.fr       */
+/*   Created: 2018/05/23 11:33:38 by egenis            #+#    #+#             */
+/*   Updated: 2018/05/23 11:41:32 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "libft.h"
-#include <ctype.h>
-
-int ft_isalpha(int c)
+int ft_atoi(const char *str)
 {
-	return (((unsigned char)c >= 0 && (unsigned char)c <= 127) ? 1 : 0);
+
 }
 
 int main(void)
 {
-	printf("The return val is %d\n", isalpha(69));
-	printf("The return val is %d\n", ft_isalpha(69));
 	return (0);
 }
