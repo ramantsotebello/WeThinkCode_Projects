@@ -6,7 +6,7 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/23 11:33:38 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/23 17:05:36 by egenis           ###   ########.fr       */
+/*   Updated: 2018/05/23 17:12:02 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
+// Multiple +'s and multiple -'s lets atoi return 0.
 int ft_atoi(const char *str)
 {
 	int ans;
