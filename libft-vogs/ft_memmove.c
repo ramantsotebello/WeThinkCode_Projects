@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/19 13:58:21 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/19 14:27:25 by egenis           ###   ########.fr       */
+/*   Created: 2018/05/18 16:42:28 by egenis            #+#    #+#             */
+/*   Updated: 2018/05/25 08:59:30 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strncpy(char *dst, const char *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t strlen;
-	size_t cntr;
+	size_t		cntr;
 
-	strlen = ft_strlen(src);
 	cntr = 0;
-	while (cntr < len)
+	while (cntr < len && (((unsigned char *)dst)[cntr]) &&
+			(((unsigned char *)src)[cntr]))
 	{
-		if (src[cntr])
-			dst[cntr] = src[cntr];
-		else
-			dst[cntr] = '\0';
-		cntr++;
+		((unsigned char *)dst)[cntr] = ((unsigned char *)src)[cntr];
+		++cntr;
 	}
 	return (dst);
 }

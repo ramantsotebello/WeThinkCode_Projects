@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/18 14:28:46 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/19 13:29:34 by egenis           ###   ########.fr       */
+/*   Created: 2018/05/23 11:33:38 by egenis            #+#    #+#             */
+/*   Updated: 2018/05/25 09:03:03 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memset(void *b, int c, size_t len)
+int		ft_atoi(const char *str)
 {
-	size_t cntr;
+	int		ans;
+	int		sign;
+	size_t	strlen;
 
-	cntr = 0;
-	while (cntr < len)
+	ans = 0;
+	sign = 1;
+	strlen = ft_strlen(str);
+	if (strlen >= 19)
+		return (-1);
+	if (*str == '-' || *str == '+' || *str == ' ' || (*str >= 9 && *str <= 13))
 	{
-		((unsigned char *)b)[cntr] = (unsigned char)c;
-		++cntr;
+		if (*str == '-')
+			sign *= -1;
+		str++;
+		if (*str == '-' || *str == '+')
+			return (0);
 	}
-	return (b);
+	while ((*str >= '0' && *str <= '9') && *str)
+		ans = (ans * 10) + (*str++ - 48);
+	return (ans * sign);
 }

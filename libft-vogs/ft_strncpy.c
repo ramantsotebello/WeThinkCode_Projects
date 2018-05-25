@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/18 14:14:21 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/19 13:44:49 by egenis           ###   ########.fr       */
+/*   Created: 2018/05/19 13:58:21 by egenis            #+#    #+#             */
+/*   Updated: 2018/05/25 08:46:57 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strncat(char *s1, const char *s2, size_t n)
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	size_t nul_pos;
-	int s2_cntr;
-	size_t num_count;
+	size_t	strlen;
+	size_t	cntr;
 
-	nul_pos = ft_strlen(s1);
-	s2_cntr = 0;
-	num_count = 0;
-	while (s2[s2_cntr] && num_count < n)
+	strlen = ft_strlen(src);
+	cntr = 0;
+	while (cntr < len)
 	{
-		s1[nul_pos] = s2[s2_cntr];
-		++nul_pos;
-		++s2_cntr;
-		++num_count;
+		if (src[cntr])
+			dst[cntr] = src[cntr];
+		else
+			dst[cntr] = '\0';
+		cntr++;
 	}
-	s1[nul_pos] = '\0';
-	return (s1);
+	return (dst);
 }

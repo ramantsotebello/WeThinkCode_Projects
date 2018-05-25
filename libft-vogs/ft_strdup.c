@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/24 16:18:22 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/24 16:18:32 by egenis           ###   ########.fr       */
+/*   Created: 2018/05/19 10:02:43 by egenis            #+#    #+#             */
+/*   Updated: 2018/05/25 12:00:35 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strdup(const char *s1)
 {
-	size_t cntr_s1;
-	size_t cntr_s2;
+	size_t	cntr;
+	size_t	strlen;
+	char	*str_ptr;
 
-	cntr_s1 = 0;
-	cntr_s2 = 0;
-	while (s1[cntr_s1] == s2[cntr_s2] && s1[cntr_s1] && s1[cntr_s2] &&
-		cntr_s1 < n)
+	cntr = 0;
+	strlen = ft_strlen(s1);
+	str_ptr = (char *)malloc(sizeof(char) * strlen);
+	if (!(str_ptr))
+		return (NULL);
+	while (cntr < strlen)
 	{
-		++cntr_s1;
-		++cntr_s2;
+		str_ptr[cntr] = s1[cntr];
+		++cntr;
 	}
-	return (s1[cntr_s1] - s2[cntr_s2]);
+	str_ptr[cntr] = '\0';
+	return (str_ptr);
 }

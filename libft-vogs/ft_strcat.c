@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strcat2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/18 17:11:47 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/18 17:35:40 by egenis           ###   ########.fr       */
+/*   Created: 2018/05/19 12:26:36 by egenis            #+#    #+#             */
+/*   Updated: 2018/05/25 08:50:57 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memchr(const void *s, int c, size_t n)
+char	*ft_strcat(char *s1, const char *s2)
 {
-	size_t cntr;
+	int		nul_pos;
+	int		s2_cntr;
 
-	cntr = 0;
-	while (cntr < n && !(((unsigned char *)s)[cntr] == (unsigned char)c) &&
-			(((unsigned char *)s)[cntr]))
-		++cntr;
-	if (((unsigned char *)s)[cntr] == (unsigned char)c)
-		return (&(((unsigned char *)s)[cntr]));
-	else
-		return (NULL);
+	nul_pos = 0;
+	s2_cntr = 0;
+	while (s1[nul_pos])
+		++nul_pos;
+	while (s2[s2_cntr])
+	{
+		s1[nul_pos] = s2[s2_cntr];
+		++nul_pos;
+		++s2_cntr;
+	}
+	s1[nul_pos] = '\0';
+	return (s1);
 }

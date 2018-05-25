@@ -1,35 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/19 14:28:06 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/24 17:32:56 by egenis           ###   ########.fr       */
+/*   Created: 2018/05/23 07:15:51 by egenis            #+#    #+#             */
+/*   Updated: 2018/05/25 09:02:00 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
+int		ft_isdigit(int c)
 {
-	size_t cntr;
-	size_t nul_pos;
-	size_t dst_len;
-	size_t src_len;
-
-	cntr = 0;
-	nul_pos = ft_strlen(dst);
-	dst_len = nul_pos;
-	src_len = ft_strlen(src);
-	while (cntr < src_len)
-	{
-		dst[nul_pos] = src[cntr];
-		++nul_pos;
-		++cntr;
-	}
-	if (dstsize - (src_len + 1) > 0)
-		dst[src_len] = '\0';
-	return (dst_len + src_len + 1);
+	return (((unsigned char)c >= 48 && (unsigned char)c <= 57) ? 1 : 0);
 }

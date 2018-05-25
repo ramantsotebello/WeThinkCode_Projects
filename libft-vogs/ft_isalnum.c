@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/23 07:52:01 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/24 16:13:11 by egenis           ###   ########.fr       */
+/*   Created: 2018/05/23 07:27:06 by egenis            #+#    #+#             */
+/*   Updated: 2018/05/25 09:03:38 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isascii(int c)
+int		ft_isalnum(int c)
 {
-	return (((unsigned char)c >= 00 && (unsigned char)c <= 0177) ? 1 : 0);
+	return ((((unsigned char)c >= 060 && (unsigned char)c <= 071) ||
+			((unsigned char)c >= 0101 && (unsigned char)c <= 0172)) ? 1 : 0);
 }

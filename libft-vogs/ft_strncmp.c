@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat2.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/19 12:26:36 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/19 13:30:35 by egenis           ###   ########.fr       */
+/*   Created: 2018/05/24 16:18:22 by egenis            #+#    #+#             */
+/*   Updated: 2018/05/25 08:48:09 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strcat(char *s1, const char *s2)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int nul_pos;
-	int s2_cntr;
+	size_t	cntr_s1;
+	size_t	cntr_s2;
 
-	nul_pos = 0;
-	s2_cntr = 0;
-	while (s1[nul_pos])
-		++nul_pos;
-	while (s2[s2_cntr])
+	cntr_s1 = 0;
+	cntr_s2 = 0;
+	while (s1[cntr_s1] == s2[cntr_s2] && s1[cntr_s1] && s1[cntr_s2] &&
+		cntr_s1 < n)
 	{
-		s1[nul_pos] = s2[s2_cntr];
-		++nul_pos;
-		++s2_cntr;
+		++cntr_s1;
+		++cntr_s2;
 	}
-	s1[nul_pos] = '\0';
-	return (s1);
+	return (s1[cntr_s1] - s2[cntr_s2]);
 }

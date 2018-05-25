@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/23 07:27:06 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/24 16:12:37 by egenis           ###   ########.fr       */
+/*   Created: 2018/05/18 14:14:21 by egenis            #+#    #+#             */
+/*   Updated: 2018/05/25 08:48:35 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalnum(int c)
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	return ((((unsigned char)c >= 060 && (unsigned char)c <= 071) ||
-			((unsigned char)c >= 0101 && (unsigned char)c <= 0172)) ? 1 : 0);
+	size_t	nul_pos;
+	int		s2_cntr;
+	size_t	num_count;
+
+	nul_pos = ft_strlen(s1);
+	s2_cntr = 0;
+	num_count = 0;
+	while (s2[s2_cntr] && num_count < n)
+	{
+		s1[nul_pos] = s2[s2_cntr];
+		++nul_pos;
+		++s2_cntr;
+		++num_count;
+	}
+	s1[nul_pos] = '\0';
+	return (s1);
 }
