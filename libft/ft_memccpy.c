@@ -6,7 +6,7 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/18 15:34:37 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/25 17:29:57 by egenis           ###   ########.fr       */
+/*   Updated: 2018/05/25 18:09:24 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,20 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	size_t		cntr;
-	char		ch;
+	unsigned char		*dst_cpy;
+	unsigned char		*src_cpy;
+	char				ch;
+	size_t				cntr;
 
-	cntr = 0;
+	dst_cpy = (unsigned char *)dst;
+	src_cpy = (unsigned char *)src;
 	ch = (unsigned char)c;
+	cntr = 0;
 	while (cntr < n)
 	{
-		if (((unsigned char *)src)[cntr] == c)
+		if (src_cpy[cntr] == c)
 			break ;
-		((unsigned char *)dst)[cntr] = ((unsigned char *)src)[cntr];
+		dst_cpy[cntr] = src_cpy[cntr];
 		++cntr;
 	}
 	if (cntr == n)
@@ -50,6 +54,10 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	else
 		return ((void *)(&dst[++cntr]));
 }
+
+//void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+//{
+//}
 
 int		main(int ac, char **av)
 {
