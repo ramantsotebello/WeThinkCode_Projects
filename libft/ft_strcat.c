@@ -6,16 +6,16 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/19 12:26:36 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/19 13:30:35 by egenis           ###   ########.fr       */
+/*   Updated: 2018/05/25 08:50:57 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strcat(char *s1, const char *s2)
+char	*ft_strcat(char *s1, const char *s2)
 {
-	int nul_pos;
-	int s2_cntr;
+	int		nul_pos;
+	int		s2_cntr;
 
 	nul_pos = 0;
 	s2_cntr = 0;

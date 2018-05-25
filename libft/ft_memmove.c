@@ -6,15 +6,15 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/18 16:42:28 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/19 13:48:12 by egenis           ###   ########.fr       */
+/*   Updated: 2018/05/25 08:59:30 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t cntr;
+	size_t		cntr;
 
 	cntr = 0;
 	while (cntr < len && (((unsigned char *)dst)[cntr]) &&
