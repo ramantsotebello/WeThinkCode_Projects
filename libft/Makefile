@@ -6,7 +6,7 @@
 #    By: egenis <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/19 12:38:07 by egenis            #+#    #+#              #
-#    Updated: 2018/05/25 11:58:29 by egenis           ###   ########.fr        #
+#    Updated: 2018/05/26 17:13:52 by egenis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ FILES = ./ft_atoi\
 		./ft_strncpy\
 		./ft_strrchr\
 		./ft_strstr\
+		./ft_strnstr\
 		./ft_tolower\
 		./ft_toupper
 
