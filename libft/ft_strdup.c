@@ -6,7 +6,7 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/19 10:02:43 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/25 12:00:35 by egenis           ###   ########.fr       */
+/*   Updated: 2018/05/28 13:56:12 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *s1)
 
 	cntr = 0;
 	strlen = ft_strlen(s1);
-	str_ptr = (char *)malloc(sizeof(char) * strlen);
+	str_ptr = (char *)malloc(sizeof(char) * strlen + 1);
 	if (!(str_ptr))
 		return (NULL);
 	while (cntr < strlen)
