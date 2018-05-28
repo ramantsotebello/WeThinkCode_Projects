@@ -11,27 +11,35 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strnlen(const char *s, size_t maxlen)
 {
 	size_t	cntr;
-	size_t	nul_pos;
+
+	cntr = 0;
+	if (!s)
+		return (0);
+	while (cntr < maxlen && s[cntr])
+		++cntr;
+	return (cntr);
+}
+
+size_t	ft_strlcat(char *dst, const char *src, size_t dst_size)
+{
 	size_t	dst_len;
 	size_t	src_len;
 
-	cntr = 0;
-	nul_pos = ft_strlen(dst);
-	dst_len = nul_pos;
+	dst_len = ft_strnlen(dst, dst_size);
 	src_len = ft_strlen(src);
-	while (cntr < src_len)
+	if (dst_len == dst_size)					// If no space to write.
+		return (dst_size + src_len);			// Return attempted str size.
+	if (src_len < dst_size - dst_len)			// Space for src and null.
+		memcpy(dst + dst_len, src, src_len + 1);
+	else
 	{
-		dst[nul_pos] = src[cntr];
-		++nul_pos;
-		++cntr;
+		memcpy(dst + dst_len, src, dst_size - 1);	// Copy as much as possible?
+		dst[dst_len + dst_size - 1] = '\0';			// Leave space for nul?
 	}
-	if (dstsize - (src_len + 1) > 0)
-		dst[src_len] = '\0';
-	return (dst_len + src_len + 1);
+	return (dst_len + src_len);
 }
-
-

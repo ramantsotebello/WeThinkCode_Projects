@@ -35,6 +35,7 @@ FILES = ./ft_atoi\
 		./ft_strdup\
 		./ft_strlcat\
 		./ft_strlen\
+		./ft_strnlen\
 		./ft_strncat\
 		./ft_strncmp\
 		./ft_strncpy\
