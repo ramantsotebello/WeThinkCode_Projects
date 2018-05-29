@@ -6,7 +6,7 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 09:27:47 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/26 14:12:53 by egenis           ###   ########.fr       */
+/*   Updated: 2018/05/29 12:17:59 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 
 size_t	ft_strlen(const char *s);
-size_t	ft_strnlen(const char *s, size_t maxlen);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 
 #endif

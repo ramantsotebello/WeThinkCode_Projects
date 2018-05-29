@@ -6,7 +6,7 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 08:32:39 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/24 17:37:23 by egenis           ###   ########.fr       */
+/*   Updated: 2018/05/29 14:48:38 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	{
 		cntr_n = 0;
 		cntr_h_cp = cntr_h;
-		while (needle[cntr_n] == haystack[cntr_h_cp] && needle[cntr_n])
+		while (needle[cntr_n] == haystack[cntr_h_cp] && needle[cntr_n] &&
+				&needle[cntr_n] <= &haystack[len])
 		{
 			++cntr_n;
 			++cntr_h_cp;

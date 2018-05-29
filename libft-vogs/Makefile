@@ -6,7 +6,7 @@
 #    By: egenis <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/19 12:38:07 by egenis            #+#    #+#              #
-#    Updated: 2018/05/26 17:07:42 by egenis           ###   ########.fr        #
+#    Updated: 2018/05/29 12:17:39 by egenis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,6 @@ FILES = ./ft_atoi\
 		./ft_strdup\
 		./ft_strlcat\
 		./ft_strlen\
-		./ft_strnlen\
 		./ft_strncat\
 		./ft_strncmp\
 		./ft_strncpy\
