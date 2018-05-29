@@ -72,14 +72,14 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 */
 
 
-static _Bool	ft_matchline(const char *haystack, const char *needle)
+static _Bool	ft_matchline(const char *hay, const char *ndl)
 {
 	size_t	cntr;
 	size_t	ndl_len;
 
 	cntr = 0;
-	ndl_len = ft_strlen(needle);
-	while (haystack[cntr] == needle[cntr] && haystack[cntr] && needle[cntr])
+	ndl_len = ft_strlen(ndl);
+	while (hay[cntr] == ndl[cntr] && hay[cntr] && ndl[cntr])
 		++cntr;
 	if (cntr == ndl_len)
 		return (1);
@@ -97,10 +97,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	ndl_len = ft_strlen(needle);
 	if (!(*needle))
 		return ((char *)haystack);
-	while (haystack[cntr] && cntr < len)
+	while (haystack[cntr])
 	{
-		//if ()
-			//return (NULL);
+		if (haystack + cntr + ndl_len > haystack + len)
+			break ;
 		//diff = ft_memcmp(haystack + cntr, needle, len);
 		match = ft_matchline(haystack + cntr, needle);
 		if (match == 1)

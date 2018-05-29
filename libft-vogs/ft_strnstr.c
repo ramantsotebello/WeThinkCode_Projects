@@ -12,31 +12,38 @@
 
 #include "libft.h"
 
+static _Bool	ft_matchline(const char *hay, const char *ndl)
+{
+	size_t	cntr;
+	size_t	ndl_len;
+
+	cntr = 0;
+	ndl_len = ft_strlen(ndl);
+	while (hay[cntr] == ndl[cntr] && hay[cntr] && ndl[cntr])
+		++cntr;
+	if (cntr == ndl_len)
+		return (1);
+	return (0);
+}
+
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t cntr_h;
-	size_t cntr_n;
-	size_t cntr_h_cp;
-	size_t ndl_len;
+	size_t	cntr;
+	size_t	ndl_len;
+	_Bool	match;
 
-	cntr_n = 0;
-	cntr_h = 0;
+	cntr = 0;
 	ndl_len = ft_strlen(needle);
 	if (!(*needle))
 		return ((char *)haystack);
-	while (cntr_n < ndl_len && haystack[cntr_h] && cntr_h < len)
+	while (haystack[cntr])
 	{
-		cntr_n = 0;
-		cntr_h_cp = cntr_h;
-		while (needle[cntr_n] == haystack[cntr_h_cp] && needle[cntr_n] &&
-				&needle[cntr_n] <= &haystack[len])
-		{
-			++cntr_n;
-			++cntr_h_cp;
-		}
-		++cntr_h;
+		if (haystack + cntr + ndl_len > haystack + len)
+			break ;
+		match = ft_matchline(haystack + cntr, needle);
+		if (match == 1)
+			return ((char *)(haystack + cntr));
+		++cntr;
 	}
-	if (cntr_h == len)
-		return (NULL);
-	return (haystack[cntr_h] == '\0' ? NULL : (char *)&(haystack[cntr_h - 1]));
+	return (NULL);
 }
