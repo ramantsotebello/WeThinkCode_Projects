@@ -6,7 +6,7 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/23 07:15:51 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/25 09:02:00 by egenis           ###   ########.fr       */
+/*   Updated: 2018/05/30 12:48:15 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int		ft_isdigit(int c)
 {
-	return (((unsigned char)c >= 48 && (unsigned char)c <= 57) ? 1 : 0);
+	if (c > '9' || c < '0')
+		return (0);
+	return (1);
 }

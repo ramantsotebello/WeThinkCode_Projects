@@ -6,13 +6,13 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 08:32:39 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/29 14:48:38 by egenis           ###   ########.fr       */
+/*   Updated: 2018/05/30 06:27:29 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static _Bool	ft_matchline(const char *hay, const char *ndl)
+static	_Bool	ft_matchline(const char *hay, const char *ndl)
 {
 	size_t	cntr;
 	size_t	ndl_len;
@@ -26,23 +26,23 @@ static _Bool	ft_matchline(const char *hay, const char *ndl)
 	return (0);
 }
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char			*ft_strnstr(const char *hay, const char *ndl, size_t len)
 {
 	size_t	cntr;
 	size_t	ndl_len;
 	_Bool	match;
 
 	cntr = 0;
-	ndl_len = ft_strlen(needle);
-	if (!(*needle))
-		return ((char *)haystack);
-	while (haystack[cntr])
+	ndl_len = ft_strlen(ndl);
+	if (!(*ndl))
+		return ((char *)hay);
+	while (hay[cntr])
 	{
-		if (haystack + cntr + ndl_len > haystack + len)
+		if (hay + cntr + ndl_len > hay + len)
 			break ;
-		match = ft_matchline(haystack + cntr, needle);
+		match = ft_matchline(hay + cntr, ndl);
 		if (match == 1)
-			return ((char *)(haystack + cntr));
+			return ((char *)(hay + cntr));
 		++cntr;
 	}
 	return (NULL);

@@ -6,7 +6,7 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/23 06:53:58 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/25 09:02:40 by egenis           ###   ########.fr       */
+/*   Updated: 2018/05/30 12:36:54 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,12 @@
 
 int		ft_isalpha(int c)
 {
-	return (((unsigned char)c >= 0 && (unsigned char)c <= 127) ? 1 : 0);
+	t_uchar	ch;
+
+	ch = (t_uchar)c;
+	if (c > 122 || c < 65)
+		return (0);
+	if ((ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122))
+		return (1);
+	return (0);
 }
