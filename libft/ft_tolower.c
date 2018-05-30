@@ -6,7 +6,7 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/23 11:06:20 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/24 17:36:56 by egenis           ###   ########.fr       */
+/*   Updated: 2018/05/30 14:08:48 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 
 int	ft_tolower(int c)
 {
-	unsigned char ch;
+	t_uchar	ch;
 
-	ch = (unsigned char)c;
-	return (ch >= 65 && ch <= 90 ? c + 32 : c);
+	ch = (t_uchar)c;
+	if (c < 'A' || c > 'Z')
+		return (c);
+	if (ch >= 'A' && ch <= 'Z')
+		return (ch + 32);
+	return (c);
 }

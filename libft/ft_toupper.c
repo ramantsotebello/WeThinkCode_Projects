@@ -6,7 +6,7 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/23 10:40:34 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/24 17:36:11 by egenis           ###   ########.fr       */
+/*   Updated: 2018/05/30 14:05:28 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 
 int	ft_toupper(int c)
 {
-	unsigned char ch;
+	t_uchar	ch;
 
-	ch = (unsigned char)c;
-	return (ch >= 97 && ch <= 122 ? c - 32 : c);
+	ch = (t_uchar)c;
+	if (c < 'a' || c > 'z')
+		return (c);
+	if (ch >= 'a' && ch <= 'z')
+		return (ch - 32);
+	return (c);
 }

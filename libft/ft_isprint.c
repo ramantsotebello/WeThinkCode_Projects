@@ -6,7 +6,7 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/23 10:08:35 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/25 09:01:43 by egenis           ###   ########.fr       */
+/*   Updated: 2018/05/30 13:06:33 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int		ft_isprint(int c)
 {
-	return ((unsigned char)c >= 32 && (unsigned char)c <= 126 ? 1 : 0);
+	if (c < ' ' || c > '~')
+		return (0);
+	return (1);
 }

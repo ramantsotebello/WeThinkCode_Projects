@@ -6,7 +6,7 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/23 07:27:06 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/25 09:03:38 by egenis           ###   ########.fr       */
+/*   Updated: 2018/05/30 12:58:27 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,16 @@
 
 int		ft_isalnum(int c)
 {
-	return ((((unsigned char)c >= 060 && (unsigned char)c <= 071) ||
-			((unsigned char)c >= 0101 && (unsigned char)c <= 0172)) ? 1 : 0);
+	t_uchar	ch;
+
+	ch = (t_uchar)c;
+	if (c < '0' || c > 'z')
+		return (0);
+	if (ch >= '0' && ch <= '9')
+		return (1);
+	if (ch >= 'A' && ch <= 'Z')
+		return (1);
+	if (ch >= 'a' && ch <= 'z')
+		return (1);
+	return (0);
 }
