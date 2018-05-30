@@ -6,23 +6,32 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 16:16:43 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/25 08:50:22 by egenis           ###   ########.fr       */
+/*   Updated: 2018/05/30 06:45:39 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
-	size_t	cntr_s1;
-	size_t	cntr_s2;
+	t_uchar	*s1_p;
+	t_uchar	*s2_p;
+	size_t	cntr;
 
-	cntr_s1 = 0;
-	cntr_s2 = 0;
-	while (s1[cntr_s1] == s2[cntr_s2] && s1[cntr_s1] && s1[cntr_s2])
-	{
-		++cntr_s1;
-		++cntr_s2;
-	}
-	return (s1[cntr_s1] - s2[cntr_s2]);
+	s1_p = (t_uchar *)s1;
+	s2_p = (t_uchar *)s2;
+	cntr = 0;
+	while (s1_p[cntr] == s2_p[cntr] && s1_p[cntr] && s2_p[cntr])
+		++cntr;
+	return ((int)(s1_p[cntr] - s2_p[cntr]));
+}
+
+int	main(void)
+{
+	char ar1[] = "dsfsadfsdf";
+	char ar2[] = "dfasdfs";
+	printf("strcmp puts the diff at %d\n", strcmp(ar1, ar2));
+	printf("ft_strcmp puts the diff at %d\n", ft_strcmp(ar1, ar2));
+	return (0);
 }
