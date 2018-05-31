@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/31 08:28:40 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/31 09:03:37 by egenis           ###   ########.fr       */
+/*   Created: 2018/05/31 09:13:54 by egenis            #+#    #+#             */
+/*   Updated: 2018/05/31 09:17:24 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+void	ft_strdel(char **as)
 {
-	char	*new;
-
-	new = (char *)malloc(sizeof(char) * (size + 1));
-	if (new == NULL):
-		return (NULL);
-	ft_bzero(new, size + 1);
-	return (new);
+	ft_memdel((void **)as);
 }

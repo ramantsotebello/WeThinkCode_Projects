@@ -1,24 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/31 08:28:40 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/31 09:03:37 by egenis           ###   ########.fr       */
+/*   Created: 2018/05/31 14:35:21 by egenis            #+#    #+#             */
+/*   Updated: 2018/05/31 16:21:45 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*new;
+	size_t			str_len;
+	size_t			cntr;
+	unsigned int	i;
+	char			*newstr;
 
-	new = (char *)malloc(sizeof(char) * (size + 1));
-	if (new == NULL):
-		return (NULL);
-	ft_bzero(new, size + 1);
-	return (new);
+	if (s && f)
+	{
+		str_len = ft_strlen(s);
+		cntr = 0;
+		i = 0;
+		newstr = ft_strnew(str_len);
+		if (!newstr)
+			return (NULL);
+		while (newstr && s[cntr])
+		{
+			newstr[cntr] = (*f)(i, s[cntr]);
+			++cntr;
+			++i;
+		}
+		return (newstr);
+	}
+	return (NULL);
 }

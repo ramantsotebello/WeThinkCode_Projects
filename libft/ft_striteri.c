@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/31 08:28:40 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/31 09:03:37 by egenis           ###   ########.fr       */
+/*   Created: 2018/05/31 09:51:30 by egenis            #+#    #+#             */
+/*   Updated: 2018/05/31 10:43:33 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+// The purpose of index i is to be the index of the character in string s.
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	char	*new;
+	unsigned int	i;
 
-	new = (char *)malloc(sizeof(char) * (size + 1));
-	if (new == NULL):
-		return (NULL);
-	ft_bzero(new, size + 1);
-	return (new);
+	i = 0;
+	if (s)
+		while (*s)
+		{
+			(*f)(i, s++);
+			++i;
+		}
 }

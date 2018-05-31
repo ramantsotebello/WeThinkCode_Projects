@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/31 08:28:40 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/31 09:03:37 by egenis           ###   ########.fr       */
+/*   Created: 2018/05/31 09:37:01 by egenis            #+#    #+#             */
+/*   Updated: 2018/05/31 09:43:23 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+void	ft_striter(char *s, void (*f)(char *))
 {
-	char	*new;
+	size_t	str_len;
+	size_t	cntr;
 
-	new = (char *)malloc(sizeof(char) * (size + 1));
-	if (new == NULL):
-		return (NULL);
-	ft_bzero(new, size + 1);
-	return (new);
+	if (s)
+	{
+		str_len = ft_strlen((const char *)s);
+		cntr = 0;
+		while (cntr < str_len)
+		{
+			(*f)(&s[cntr]);
+			++cntr;
+		}
+	}
 }

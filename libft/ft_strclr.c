@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/31 08:28:40 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/31 09:03:37 by egenis           ###   ########.fr       */
+/*   Created: 2018/05/31 09:22:04 by egenis            #+#    #+#             */
+/*   Updated: 2018/05/31 09:27:30 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+void	ft_strclr(char *s)
 {
-	char	*new;
+	size_t	str_len;
 
-	new = (char *)malloc(sizeof(char) * (size + 1));
-	if (new == NULL):
-		return (NULL);
-	ft_bzero(new, size + 1);
-	return (new);
+	str_len = ft_strlen((const char *)s);
+	if (s)
+		ft_bzero((t_uchar *)s, str_len);
 }
