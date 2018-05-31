@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/15 08:20:09 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/31 09:30:45 by egenis           ###   ########.fr       */
+/*   Created: 2018/05/31 09:13:39 by egenis            #+#    #+#             */
+/*   Updated: 2018/05/31 09:18:08 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_strdel(char **as)
 {
-	size_t	count;
-
-	count = 0;
-	while (s[count])
-		++count;
-	return (count);
+	ft_memdel((void **)as);
 }

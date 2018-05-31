@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/15 08:20:09 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/31 09:30:45 by egenis           ###   ########.fr       */
+/*   Created: 2018/05/31 14:37:22 by egenis            #+#    #+#             */
+/*   Updated: 2018/05/31 14:58:25 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int		ft_strequ(char const *s1, char const *s2)
 {
-	size_t	count;
+	size_t	cntr;
 
-	count = 0;
-	while (s[count])
-		++count;
-	return (count);
+	if (s1 && s2)
+	{
+		cntr = 0;
+		while (s1[cntr] == s2[cntr] && s1[cntr] && s2[cntr])
+			++cntr;
+		if (!(s1[cntr] && s2[cntr]))
+			return (1);
+	}
+	return (0);
 }

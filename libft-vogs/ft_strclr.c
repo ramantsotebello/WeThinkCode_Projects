@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/15 08:20:09 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/31 09:30:45 by egenis           ###   ########.fr       */
+/*   Created: 2018/05/31 09:21:49 by egenis            #+#    #+#             */
+/*   Updated: 2018/05/31 09:32:09 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_strclr(char *s)
 {
-	size_t	count;
+	size_t	str_len;
 
-	count = 0;
-	while (s[count])
-		++count;
-	return (count);
+	if (s)
+	{
+		str_len = ft_strlen((const char *)s);
+		ft_bzero((t_uchar *)s, str_len);
+	}
 }

@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/15 08:20:09 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/31 09:30:45 by egenis           ###   ########.fr       */
+/*   Created: 2018/05/31 15:16:16 by egenis            #+#    #+#             */
+/*   Updated: 2018/05/31 16:17:49 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	size_t	count;
+	size_t	cntr;
+	char	*newstr;
 
-	count = 0;
-	while (s[count])
-		++count;
-	return (count);
+	newstr = NULL;
+	if (s)
+	{
+		cntr = 0;
+		newstr = ft_strnew(len);
+		if (!newstr)
+			return (NULL);
+		while (s[start] && cntr < len)
+		{
+			newstr[cntr] = s[start];
+			++cntr;
+			++start;
+		}
+		//newstr[cntr] = '\0';
+	}
+	return (newstr);
 }

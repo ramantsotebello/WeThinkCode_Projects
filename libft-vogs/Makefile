@@ -6,7 +6,7 @@
 #    By: egenis <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/19 12:38:07 by egenis            #+#    #+#              #
-#    Updated: 2018/05/30 14:56:23 by egenis           ###   ########.fr        #
+#    Updated: 2018/05/31 17:15:27 by egenis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,20 @@ CFILES = ./ft_atoi.c\
 		./ft_strnstr.c\
 		./ft_tolower.c\
 		./ft_toupper.c\
-		./ft_memalloc.c
+		./ft_memalloc.c\
+		./ft_memdel.c\
+		./ft_strnew.c\
+		./ft_strdel.c\
+		./ft_strdel.c\
+		./ft_strclr.c\
+		./ft_striter.c\
+		./ft_striteri.c\
+		./ft_strmap.c\
+		./ft_strmapi.c\
+		./ft_strequ.c\
+		./ft_strnequ.c\
+		./ft_strsub.c\
+		./ft_strjoin.c\
 
 OFILES = ./ft_atoi.o\
 		./ft_bzero.o\
@@ -74,7 +87,19 @@ OFILES = ./ft_atoi.o\
 		./ft_strnstr.o\
 		./ft_tolower.o\
 		./ft_toupper.o\
-		./ft_memalloc.o
+		./ft_memalloc.o\
+		./ft_memdel.o\
+		./ft_strnew.o\
+		./ft_strdel.o\
+		./ft_strclr.o\
+		./ft_striter.o\
+		./ft_striteri.o\
+		./ft_strmap.o\
+		./ft_strmapi.o\
+		./ft_strequ.o\
+		./ft_strnequ.o\
+		./ft_strsub.o\
+		./ft_strjoin.o\
 
 HEADER = ./libft.h
 
