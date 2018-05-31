@@ -6,7 +6,7 @@
 #    By: egenis <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/19 12:38:07 by egenis            #+#    #+#              #
-#    Updated: 2018/05/31 17:15:27 by egenis           ###   ########.fr        #
+#    Updated: 2018/05/31 17:46:17 by egenis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,7 @@ CFILES = ./ft_atoi.c\
 		./ft_strnequ.c\
 		./ft_strsub.c\
 		./ft_strjoin.c\
+		./ft_strtrim.c\
 
 OFILES = ./ft_atoi.o\
 		./ft_bzero.o\
@@ -100,6 +101,7 @@ OFILES = ./ft_atoi.o\
 		./ft_strnequ.o\
 		./ft_strsub.o\
 		./ft_strjoin.o\
+		./ft_strtrim.o\
 
 HEADER = ./libft.h
 
