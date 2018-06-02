@@ -6,7 +6,7 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 09:27:47 by egenis            #+#    #+#             */
-/*   Updated: 2018/06/02 12:31:06 by egenis           ###   ########.fr       */
+/*   Updated: 2018/06/02 13:37:53 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ int		ft_strequ(char const *s1, char const *s2);
 int		ft_strnequ(char const *s1, char const *s2, size_t n);
 
 size_t	ft_strlen(const char *s);
+size_t	ft_strclen(const char *s, const char c);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 
 #endif
