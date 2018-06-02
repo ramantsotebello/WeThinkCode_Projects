@@ -6,7 +6,7 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/02 13:13:02 by egenis            #+#    #+#             */
-/*   Updated: 2018/06/02 16:50:54 by egenis           ###   ########.fr       */
+/*   Updated: 2018/06/02 17:26:02 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,6 @@ static	char	*ft_nxt_wrd_adrs(char const *s, char c)
 	cntr = 0;
 	ch = (t_uchar)c;
 	wrd_adrs = NULL;
-	swtch = 0;
 	if (!s)
 		return (wrd_adrs);
 	while (s[cntr])
@@ -116,7 +115,7 @@ static	char	*ft_nxt_wrd_adrs(char const *s, char c)
 	return (wrd_adrs);
 }
 
-static	char		**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	size_t		cntr;
 	size_t		w_cnt;
@@ -145,7 +144,7 @@ static	char		**ft_strsplit(char const *s, char c)
 
 int main(void)
 {
-	char *ar = "*hello*fellow***students*";
+	char *ar = "hello*fellow***students*";
 	char **ans = ft_strsplit(ar, '*');
 	for (int i = 0; i < 3; ++i)
 		printf("%s\n", ans[i]);

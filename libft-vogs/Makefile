@@ -6,7 +6,7 @@
 #    By: egenis <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/19 12:38:07 by egenis            #+#    #+#              #
-#    Updated: 2018/06/02 15:31:07 by egenis           ###   ########.fr        #
+#    Updated: 2018/06/02 16:56:51 by egenis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,7 @@ FILES = ./ft_atoi\
 		./ft_strjoin\
 		./ft_strtrim\
 		./ft_strclen\
-#		./ft_strsplit\
+		./ft_strsplit\
 
 CFILES = $(addsuffix .c, $(FILES))
 
