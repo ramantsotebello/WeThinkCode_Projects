@@ -1,6 +1,6 @@
 #!/bin/bash
 # A simple script to find any 42 libft forbidden functions used in the files
-# in the current directory. This requires extended grep. Feel free to add more.
+# in the current directory. This requires extended grep. Feel free to modify.
 
 echo
 egrep -nr '\bprintf*' .

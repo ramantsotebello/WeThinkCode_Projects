@@ -6,7 +6,7 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/02 08:29:11 by egenis            #+#    #+#             */
-/*   Updated: 2018/06/02 08:51:35 by egenis           ###   ########.fr       */
+/*   Updated: 2018/06/02 11:15:56 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,21 @@ char			*ft_strtrim(char const *s)
 	char	*bgn_adrs;
 	char	*end_adrs;
 	char	*newstr;
-	size_t	str_len;
+	int		str_len;
 
 	if (!s)
 		return (NULL);
 	bgn_adrs = ft_find_bgn_adrs(s);
 	end_adrs = ft_find_end_adrs(s);
-	//printf("The char at bgn_adrs %p is %d\n", bgn_adrs, *bgn_adrs);
-	//printf("The char at end_adrs %p is %d\n", end_adrs, *end_adrs);
 	str_len = end_adrs - bgn_adrs + 1;
-	//printf("str_len is %zu\n", str_len);
+	if (str_len < 0)
+		str_len = 0;
 	newstr = ft_strnew(str_len);
 	if (!newstr)
 		return (NULL);
-	ft_memcpy(newstr, bgn_adrs, str_len);
+	if (str_len > 0)
+		ft_memcpy(newstr, bgn_adrs, str_len);
+	else
+		newstr[0] = '\0';
 	return (newstr);
 }
