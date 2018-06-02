@@ -6,7 +6,7 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/02 08:29:11 by egenis            #+#    #+#             */
-/*   Updated: 2018/06/02 11:15:56 by egenis           ###   ########.fr       */
+/*   Updated: 2018/06/02 12:36:28 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ static	char	*ft_find_bgn_adrs(char const *s)
 	char	*bgn_adrs;
 
 	bgn_adrs = (char *)s;
-	while (*bgn_adrs && (*bgn_adrs ==  ' ' || *bgn_adrs == '\t' ||
-			*bgn_adrs == '\n'))
+	while (*bgn_adrs && (*bgn_adrs == ' ' || *bgn_adrs == '\t' ||
+	*bgn_adrs == '\n'))
 		++bgn_adrs;
 	return (bgn_adrs);
 }
@@ -30,8 +30,8 @@ static	char	*ft_find_end_adrs(char const *s)
 
 	str_len = ft_strlen(s);
 	end_adrs = (char *)s + str_len;
-	while (end_adrs > s && (*end_adrs == '\0' || *end_adrs ==  ' '
-			|| *end_adrs == '\t' || *end_adrs == '\n'))
+	while (end_adrs > s && (*end_adrs == '\0' || *end_adrs == ' '
+	|| *end_adrs == '\t' || *end_adrs == '\n'))
 		--end_adrs;
 	return (end_adrs);
 }
