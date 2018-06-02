@@ -6,7 +6,7 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 09:27:47 by egenis            #+#    #+#             */
-/*   Updated: 2018/06/02 13:37:53 by egenis           ###   ########.fr       */
+/*   Updated: 2018/06/02 15:30:18 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s);
 
-char	**ft_strsplit(char const *s, char c);
+//char	**ft_strsplit(char const *s, char c);
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_atoi(const char *str);

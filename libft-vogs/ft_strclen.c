@@ -6,11 +6,11 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/02 13:33:46 by egenis            #+#    #+#             */
-/*   Updated: 2018/06/02 13:39:24 by egenis           ###   ########.fr       */
+/*   Updated: 2018/06/02 15:36:01 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.a"
+#include "libft.h"
 
 size_t	ft_strclen(const char *s, const char c)
 {
