@@ -6,7 +6,7 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 15:16:16 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/31 16:17:49 by egenis           ###   ########.fr       */
+/*   Updated: 2018/06/02 11:56:13 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 			++cntr;
 			++start;
 		}
-		//newstr[cntr] = '\0';
 	}
 	return (newstr);
 }
