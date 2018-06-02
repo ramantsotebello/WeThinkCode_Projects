@@ -37,30 +37,27 @@ static	size_t	ft_wrd_count(char const *s, char c)
 	return (w_cnt);
 }
 
-static	char	*ft_nxt_wrd_adrs(char const *s, char c)
+static	char	*ft_nxt_wrd_adrs(char const *s, char c, _Bool *wrd_1st)
 {
 	size_t		cntr;
 	t_uchar		ch;
 	char		*wrd_adrs;
-	_Bool		swtch;
 
 	cntr = 0;
 	ch = (t_uchar)c;
 	wrd_adrs = NULL;
-	swtch = 0;
 	if (!s)
 		return (wrd_adrs);
-	while (s[cntr])
+	if (*wrd_1st)
 	{
-		if (s[cntr] == ch)
-			swtch = 1;
-		if (s[cntr] != ch && swtch)
-		{
-			wrd_adrs = (char *)&s[cntr];
-			break ;
-		}
-		++cntr;
+		*wrd_1st = 0;
+		return ((char *)&s[cntr]);
 	}
+	while (s[cntr] && s[cntr] != ch)
+		++cntr;
+	while (s[cntr] && s[cntr] == ch)
+		++cntr;
+	wrd_adrs = (char *)&s[cntr];
 	return (wrd_adrs);
 }
 
@@ -71,6 +68,7 @@ char			**ft_strsplit(char const *s, char c)
 	size_t		w_len;
 	char		*tmp;
 	char		**ar;
+	_Bool		wrd_1st;
 
 	cntr = 0;
 	if (!s)
@@ -80,9 +78,10 @@ char			**ft_strsplit(char const *s, char c)
 	if (!ar)
 		return (NULL);
 	tmp = (char *)s;
+	wrd_1st = (*s == (t_uchar)c) ? 0 : 1;
 	while (cntr < w_cnt)
 	{
-		tmp = ft_nxt_wrd_adrs(tmp, c);
+		tmp = ft_nxt_wrd_adrs(tmp, c, &wrd_1st);
 		w_len = ft_strclen(tmp, c);
 		ar[cntr] = ft_strnew(w_len);
 		ar[cntr] = ft_strncpy(ar[cntr], tmp, w_len);
