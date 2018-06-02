@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/19 14:28:06 by egenis            #+#    #+#             */
-/*   Updated: 2018/06/02 09:55:32 by egenis           ###   ########.fr       */
+/*   Created: 2018/05/31 17:30:26 by egenis            #+#    #+#             */
+/*   Updated: 2018/05/31 17:40:29 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	dst_len;
-	size_t	src_len;
-	size_t	final_len;
+	size_t	str1_len;
+	size_t	str2_len;
+	char	*newstr;
 
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	final_len = 0;
-	if (dstsize <= dst_len)
-		return (dstsize + src_len);
-	else
-		ft_memcpy(dst + dst_len, src, src_len + 1);
-	final_len = ft_strlen(dst);
-	if (final_len == dstsize)
-		dst[--final_len] = '\0';
-	return (dst_len + src_len);
+	if (!s1 || !s1)
+		return (NULL);
+	str1_len = ft_strlen(s1);
+	str2_len = ft_strlen(s2);
+	newstr = ft_strnew(str1_len + str2_len);
+	if (!newstr)
+		return (NULL);
+	ft_bzero(newstr, str1_len + str2_len + 1);
+	ft_strcpy(newstr, s1);
+	ft_strcat(newstr, s2);
+	return (newstr);
 }

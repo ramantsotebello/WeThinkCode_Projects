@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/06/02 08:30:09 by egenis            #+#    #+#             */
+/*   Updated: 2018/06/02 08:54:13 by egenis           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <stdio.h>
 #include "libft.h"
@@ -24,7 +34,6 @@ void	ft_bzero(void *s, size_t n)
 		++cntr;
 	}
 }
-
 
 char	*ft_strnew(size_t size)
 {
@@ -69,8 +78,8 @@ static	char	*ft_find_end_adrs(char const *s)
 
 	str_len = ft_strlen(s);
 	end_adrs = (char *)s + str_len;
-	while (*end_adrs == '\0' || *end_adrs ==  ' ' || *end_adrs == '\t' ||
-			*end_adrs == '\n')
+	while (end_adrs > s && (*end_adrs == '\0' || *end_adrs ==  ' '
+			|| *end_adrs == '\t' || *end_adrs == '\n'))
 		--end_adrs;
 	return (end_adrs);
 }
@@ -88,7 +97,8 @@ char			*ft_strtrim(char const *s)
 	end_adrs = ft_find_end_adrs(s);
 	printf("The char at bgn_adrs %p is %d\n", bgn_adrs, *bgn_adrs);
 	printf("The char at end_adrs %p is %d\n", end_adrs, *end_adrs);
-	str_len = end_adrs - bgn_adrs;
+	str_len = end_adrs - bgn_adrs + 1;
+	printf("str_len is %zu\n", str_len);
 	newstr = ft_strnew(str_len);
 	if (!newstr)
 		return (NULL);
@@ -98,9 +108,8 @@ char			*ft_strtrim(char const *s)
 
 int	main(void)
 {
-	char *s1 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   "
-				"\n \n \t\t\n";
-	char *s2 = "Hello \t  Please\n Trim me !";
+	char *s1 = "  \t \t \n   \n\n\n\t";
+	//char *s2 = "Hello \t  Please\n Trim me !";
 	char *ans = ft_strtrim(s1);
 	printf("%s\n", ans);
 	printf("The char count of trimmed string s1 is %zu\n", ft_strlen(ans));
