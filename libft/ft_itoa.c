@@ -51,7 +51,7 @@ static	int		ft_calc_divisor(int n)
 	cntr = 0;
 	num_cnt = ft_count_num(n);
 	divisor = 1;
-	while (cntr < num_cnt - 1)
+	while (num_cnt && cntr < num_cnt - 1)
 	{
 		divisor *= 10;
 		++cntr;
@@ -111,7 +111,7 @@ char			*ft_itoa(int n)
 
 int main(void)
 {
-	int x = -4735;
+	int x = 0;
 	printf("%s\n", ft_itoa(x));
 	return (0);
 }
