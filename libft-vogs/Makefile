@@ -60,6 +60,7 @@ FILES = ./ft_atoi\
 		./ft_strtrim\
 		./ft_strclen\
 		./ft_strsplit\
+		./ft_itoa\
 
 CFILES = $(addsuffix .c, $(FILES))
 
