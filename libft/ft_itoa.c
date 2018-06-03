@@ -31,6 +31,8 @@ static	size_t	ft_count_num(int n)
 	int		ans;
 
 	cntr = 0;
+	if (n < 0) 
+	    n *= -1;
 	ans = n;
 	while (ans > 0)
 	{
@@ -40,45 +42,48 @@ static	size_t	ft_count_num(int n)
 	return (cntr);
 }
 
-static	int		ft_calc_modulator(int n)
+static	int		ft_calc_divisor(int n)
 {
 	size_t	cntr;
 	size_t	num_cnt;
-	int		modulator;
+	int		divisor;
 
 	cntr = 0;
 	num_cnt = ft_count_num(n);
-	modulator = 1;
+	divisor = 1;
 	while (cntr < num_cnt - 1)
 	{
-		modulator *= 10;
+		divisor *= 10;
 		++cntr;
 	}
-	return (modulator);
+	return (divisor);
 }
 
 // Remember that num_cnt will be 1 more if sign < 0.
 static	char	*ft_write_num(char *str, int n, int sign)
 {
 	size_t	cntr;
-	int		modulator;
+	int		divisor;
 	int		ans;
 
 	cntr = 0;
-	modulator = ft_calc_modulator(n);
-	printf("modulator is %d\n", modulator);
+	divisor = ft_calc_divisor(n);
+	printf("n passed in is %d\n", n);
+	printf("divisor is %d\n", divisor);
 	if (sign < 0)
 	{
 		n *= -1;
 		str[0] = '-';
 		++cntr;
 	}
-	while (modulator > 1)
+	printf("n is now %d\n", n);
+	while (divisor > 0)
 	{
-		ans = n % modulator;
+		ans = n / divisor;
+		printf("ans is %d\n", ans);
 		str[cntr] = ans + 48;
-		n = n - (ans * modulator);
-		modulator /= 10;
+		n = n - (ans * divisor);
+		divisor /= 10;
 		++cntr;
 	}
 	return (str);
@@ -94,22 +99,19 @@ char			*ft_itoa(int n)
 	num_cnt = ft_count_num(n);
 	if (sign == -1)
 		++num_cnt;
+	printf("num_cnt is %zu\n", num_cnt);
 	str = ft_strnew(num_cnt);
 	if (!str)
 		return (NULL);
+	if (str)
+	    printf("str is non-null");
 	str = ft_write_num(str, n, sign);
 	return (str);
 }
 
 int main(void)
 {
-	int x = 154345;
-	int y = 0;
-	int z = -158384;
-	int b = +4223;
+	int x = -4735;
 	printf("%s\n", ft_itoa(x));
-	printf("%s\n", ft_itoa(y));
-	printf("%s\n", ft_itoa(z));
-	printf("%s\n", ft_itoa(b));
 	return (0);
 }
