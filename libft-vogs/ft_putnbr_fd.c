@@ -6,7 +6,7 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 10:27:49 by egenis            #+#    #+#             */
-/*   Updated: 2018/06/04 10:30:18 by egenis           ###   ########.fr       */
+/*   Updated: 2018/06/04 15:27:38 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static	int		ft_calc_divisor(int n)
 	return (divisor);
 }
 
-void 			ft_putnbr_fd(int n, int fd)
+void			ft_putnbr_fd(int n, int fd)
 {
 	int		ans;
 	int		divisor;

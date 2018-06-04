@@ -6,7 +6,7 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 07:09:58 by egenis            #+#    #+#             */
-/*   Updated: 2018/06/04 07:10:00 by egenis           ###   ########.fr       */
+/*   Updated: 2018/06/04 15:26:43 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ static	size_t	ft_count_num(int n)
 
 	cntr = 0;
 	ans = n;
-	if (ans < 0) 
-	    ans *= -1;
+	if (ans < 0)
+		ans *= -1;
 	if (!ans)
 		return (1);
 	while (ans > 0)
@@ -89,6 +89,6 @@ char			*ft_itoa(int n)
 	if (!str)
 		return (NULL);
 	if (str)
-	str = ft_write_num(str, n, sign);
+		str = ft_write_num(str, n, sign);
 	return (str);
 }
