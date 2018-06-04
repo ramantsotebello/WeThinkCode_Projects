@@ -6,7 +6,7 @@
 #    By: egenis <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/19 12:38:07 by egenis            #+#    #+#              #
-#    Updated: 2018/06/04 07:49:34 by egenis           ###   ########.fr        #
+#    Updated: 2018/06/04 10:31:49 by egenis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,6 +64,10 @@ FILES = ./ft_atoi\
 		./ft_putstr\
 		./ft_putendl\
 		./ft_putnbr\
+		./ft_putchar_fd\
+		./ft_putstr_fd\
+		./ft_putendl_fd\
+		./ft_putnbr_fd\
 
 CFILES = $(addsuffix .c, $(FILES))
 
