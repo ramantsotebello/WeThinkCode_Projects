@@ -14,15 +14,12 @@
 
 int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	size_t	cntr;
+	int		ans;
 
-	if (s1 && s2)
-	{
-		cntr = 0;
-		while (s1[cntr] == s2[cntr] && s1[cntr] && s2[cntr] && cntr < n)
-			++cntr;
-		if (!(s1[cntr] && s2[cntr]))
-			return (1);
-	}
+	if (!s1 || !s2)
+		return (0);
+	ans = ft_strncmp(s1, s2, n);
+	if (ans == 0)
+		return (1);
 	return (0);
 }
