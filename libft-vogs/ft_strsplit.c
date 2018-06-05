@@ -1,18 +1,7 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/05 15:57:19 by egenis            #+#    #+#             */
-/*   Updated: 2018/06/05 16:43:30 by egenis           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "libft.h"
 
-static	size_t	ft_wrd_count(char const *s, char c)
+static	size_t	ft_wrd_count(char *s, char c)
 {
 	size_t		cntr;
 	size_t		wrd_count;
@@ -36,28 +25,26 @@ static	size_t	ft_wrd_count(char const *s, char c)
 	return (wrd_count);
 }
 
-static	char	*ft_nxt_wrd_adrs(char const *s, char c, _Bool *wrd_1st)
+static	char	*ft_nxt_wrd_adrs(char *s, char c, _Bool *wrd_1st)
 {
 	size_t		cntr;
-	char		*ptr;
 	t_uchar		ch;
 
 	cntr = 0;
 	ch = (t_uchar)c;
-	ptr = (char *)s;
 	if (*wrd_1st)
 	{
 		*wrd_1st = 0;
-		return (ptr);
+		return (s);
 	}
-	while (ptr[cntr] && ptr[cntr] != ch)
+	while (s[cntr] && s[cntr] != ch)
 		++cntr;
-	while (ptr[cntr] && ptr[cntr] == ch)
+	while (s[cntr] && s[cntr] == ch)
 		++cntr;
-	return (&ptr[cntr]);
+	return (&s[cntr]);
 }
 
-static	char	**ft_alloc_and_cpy(char *s, char c, _Bool *wrd_1st)
+static	char	**ft_alloc_and_cpy(char *s, char c, _Bool wrd_1st)
 {
 	size_t		cntr;
 	size_t		wrd_count;
@@ -67,20 +54,16 @@ static	char	**ft_alloc_and_cpy(char *s, char c, _Bool *wrd_1st)
 
 	cntr = 0;
 	wrd_count = ft_wrd_count(s, c);
-	if (!wrd_count)
-	{
-		ar = (char **)malloc(1);
-		ar[0] = NULL;
-		return (ar);
-	}
 	ar = (char **)malloc(sizeof(char *) * wrd_count + 1);
+	if (!ar)
+		return (NULL);
+	wrd_1st = (*s != (t_uchar)c) ? 1 : 0;
 	wrd_adrs = s;
 	while (cntr < wrd_count)
 	{
-		wrd_adrs = ft_nxt_wrd_adrs(wrd_adrs, c, wrd_1st);
+		wrd_adrs = ft_nxt_wrd_adrs(wrd_adrs, c, &wrd_1st);
 		wrd_len = ft_strclen(wrd_adrs, c);
-		ar[cntr] = ft_strnew(wrd_len);
-		ar[cntr] = ft_strncpy(ar[cntr], wrd_adrs, wrd_len);
+		ar[cntr] = ft_strsub(wrd_adrs, 0, wrd_len);
 		++cntr;
 	}
 	ar[wrd_count] = NULL;
@@ -89,14 +72,10 @@ static	char	**ft_alloc_and_cpy(char *s, char c, _Bool *wrd_1st)
 
 char			**ft_strsplit(char const *s, char c)
 {
-	_Bool		wrd_1st;
 	char		**ar;
-	t_uchar		ch;
 
-	ch = (t_uchar)c;
 	if (!s)
 		return (NULL);
-	wrd_1st = (*s != ch) ? 1 : 0;
-	ar = ft_alloc_and_cpy(s, c, &wrd_1st);
+	ar = ft_alloc_and_cpy((char *)s, c, 0);
 	return (ar);
 }
