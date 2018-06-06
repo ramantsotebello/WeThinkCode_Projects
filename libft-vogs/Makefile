@@ -6,7 +6,7 @@
 #    By: egenis <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/19 12:38:07 by egenis            #+#    #+#              #
-#    Updated: 2018/06/06 08:13:25 by egenis           ###   ########.fr        #
+#    Updated: 2018/06/06 10:21:18 by egenis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,9 +28,7 @@ FILES =	ft_atoi ft_bzero ft_isalnum ft_isalpha ft_isascii\
 
 CFILES = $(FILES:%=./srcs/%.c)
 
-OFILES = $(CFILES:.c=.o)
-
-HEADER = ./includes
+OFILES = $(FILES:=.o)
 
 all: $(NAME)
 
@@ -38,7 +36,7 @@ $(NAME): $(OFILES)
 	ar rc $(NAME) $(OFILES)
 
 $(OFILES): $(CFILES)
-	gcc $(FLAGS) $(CFILES) -I $(HEADER)
+	gcc $(FLAGS) $(CFILES) -I ./includes
 
 clean:
 	rm -f $(OFILES)
