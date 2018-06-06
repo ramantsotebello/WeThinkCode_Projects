@@ -6,7 +6,7 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 08:32:39 by egenis            #+#    #+#             */
-/*   Updated: 2018/05/30 06:27:29 by egenis           ###   ########.fr       */
+/*   Updated: 2018/06/06 16:36:27 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char			*ft_strnstr(const char *hay, const char *ndl, size_t len)
 		return ((char *)hay);
 	while (hay[cntr])
 	{
-		if (hay + cntr + ndl_len > hay + len)
+		if (hay + ndl_len + cntr > hay + len)
 			break ;
 		match = ft_matchline(hay + cntr, ndl);
 		if (match == 1)
