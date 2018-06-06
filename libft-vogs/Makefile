@@ -6,7 +6,7 @@
 #    By: egenis <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/19 12:38:07 by egenis            #+#    #+#              #
-#    Updated: 2018/06/06 10:21:18 by egenis           ###   ########.fr        #
+#    Updated: 2018/06/06 12:26:52 by egenis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,17 +26,17 @@ FILES =	ft_atoi ft_bzero ft_isalnum ft_isalpha ft_isascii\
 		ft_strsplit ft_itoa ft_putstr ft_putendl ft_putnbr\
 		ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd\
 
-CFILES = $(FILES:%=./srcs/%.c)
+CFILES = $(FILES:=.c)
 
 OFILES = $(FILES:=.o)
 
 all: $(NAME)
 
 $(NAME): $(OFILES)
-	ar rc $(NAME) $(OFILES)
+	ar rcs $(NAME) $(OFILES)
 
 $(OFILES): $(CFILES)
-	gcc $(FLAGS) $(CFILES) -I ./includes
+	gcc $(FLAGS) $(CFILES) -I ./
 
 clean:
 	rm -f $(OFILES)
