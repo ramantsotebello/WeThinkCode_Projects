@@ -6,7 +6,7 @@
 /*   By: egenis <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 09:27:47 by egenis            #+#    #+#             */
-/*   Updated: 2018/06/06 09:55:13 by egenis           ###   ########.fr       */
+/*   Updated: 2018/06/06 16:56:43 by egenis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
-
-# define CHAR_MAX 127
-# define CHAR_MIN -128
-# define UCHAR_MAX 255
-# define SIZE_T_MAX 65536
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
-# define UINT_MAX 4294967295
 
 typedef unsigned char	t_uchar;
 
