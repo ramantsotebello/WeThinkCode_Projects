@@ -1,2 +1,2 @@
 # WeThinkCode_
-Private Project Storage
+Project Storage
